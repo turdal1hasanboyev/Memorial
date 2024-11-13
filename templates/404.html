@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static '' %}css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="error-message">
+        <h1>404</h1>
+        <p>Oops! The page you’re looking for doesn’t exist.</p>
+        <a href="/" class="home-btn">Go to Home</a>
+      </div>
+    </div>
+
+    <script src="{% static '' %}js/scripts.js"></script>
+  </body>
+</html>
