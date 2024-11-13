@@ -2,7 +2,8 @@
 * Modellar yozildi
 * Custom User Manager Yozildi va boshqa modellar 
 # Ertaga qiladigan ishlarim 
-* Umumiy tekshiruv
-* Modellar tekshiruvi
+* Umumiy tekshiruv True
+* Modellar tekshiruvi True
 * Admin Register
-* PSQL Integration
+* PSQL Integration True
+* Model yozish tugatildi

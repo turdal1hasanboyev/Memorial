@@ -82,7 +82,7 @@ class CustomUser(AbstractUser, BaseModel):
     video = models.FileField(blank=True, null=True, upload_to='profile_videos/')
     gender = models.CharField(max_length=10, choices=GENDER, default=None, null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
-    phone_number = models.CharField(max_length=15, null=True, blank=True)
+    phone_number = models.CharField(max_length=15)
     adress = models.CharField(max_length=250, null=True, blank=True)
     
     objects = CustomUserManager()
@@ -101,15 +101,14 @@ class CustomUser(AbstractUser, BaseModel):
     def __str__(self):
         if self.get_full_name():
             return f"{self.get_full_name()}"
-        return F"{self.email}"
+        return f"{self.email}"
     
     def age(self):
-        if not isinstance(self.birth_date, date):
+        if not isinstance(self.birthday, date):
             return None
-
         today = date.today()
-        age = today.year - self.birth_date.year
-        if (today.month, today.day) < (self.birth_date.month, self.birth_date.day):
+        age = today.year - self.birthday.year
+        if (today.month, today.day) < (self.birthday.month, self.birthday.day):
             age -= 1
         return age
     
@@ -136,12 +135,12 @@ class Contact(BaseModel):
         return f"{self.name}"
     
     class Meta:
-        verbose_name = 'Kontakt'
-        verbose_name_plural = "Kontaktlar"
+        verbose_name = 'Biz bilan aloqa'
+        verbose_name_plural = "Biz bilan aloqa"
         
         
 class Genre(BaseModel):
-    name = models.CharField(max_length=200, db_index=True)
+    name = models.CharField(max_length=200, unique=True, db_index=True)
 
     def __str__(self):
         return f"{self.name}"
@@ -180,7 +179,7 @@ class Tag(BaseModel):
 
 
 class Award(BaseModel):
-    name = models.CharField(max_length=250, db_index=True)
+    name = models.CharField(max_length=250, db_index=True, unique=True)
     date = models.DateField(null=True, blank=True)
 
     def __str__(self):
@@ -269,3 +268,29 @@ class MyBook(BaseModel):
     class Meta:
         verbose_name = 'Mening Kitobim'
         verbose_name_plural = "Mening Kitoblarim"
+        
+        
+class About(BaseModel):
+    title = models.CharField(max_length=250, db_index=True)
+    description = RichTextField()
+    image = models.ImageField(upload_to='about_images/', default='images/default-image.jpg')
+    
+    def __str__(self):
+        return f"{self.title}"
+    
+    class Meta:
+        verbose_name = 'Haqqimda'
+        verbose_name_plural = "Haqqimda"
+        
+        
+class Banner(BaseModel):
+    title = models.CharField(max_length=250, db_index=True)
+    description = models.TextField()
+    image = models.ImageField(upload_to='banner_images/', default='images/default-image.jpg')
+    
+    def __str__(self):
+        return f"{self.title}"
+    
+    class Meta:
+        verbose_name = 'Banner'
+        verbose_name_plural = "Bannerlar"
