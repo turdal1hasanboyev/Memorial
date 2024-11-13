@@ -57,7 +57,7 @@ DJANGO_QUERY_COUNTER = {
     },
 }
 
-# AUTH_USER_MODEL = 'memorial.CustomUser'
+AUTH_USER_MODEL = 'memorial.CustomUser'
 
 ROOT_URLCONF = 'config.urls'
 
