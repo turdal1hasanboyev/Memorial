@@ -11,9 +11,9 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="YouTube API",
+      title="Memorial API's",
       default_version='v1',
-      description="YouTube Description",
+      description="Memorial Description",
       terms_of_service="https://www.google.com/policies/terms/",
       contact=openapi.Contact(email="turdalihasanboyev70@gmail.com"),
       license=openapi.License(name="BSD License"),
