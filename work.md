@@ -8,3 +8,5 @@
 * PSQL Integration True
 * Model yozish tugatildi
 # Model va admin yozish tugatildi
+# Template yozildi
+* Faqat backend qismi yozilib chiqiladi 
