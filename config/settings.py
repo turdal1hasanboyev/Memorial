@@ -61,6 +61,10 @@ AUTH_USER_MODEL = 'memorial.CustomUser'
 
 ROOT_URLCONF = 'config.urls'
 
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

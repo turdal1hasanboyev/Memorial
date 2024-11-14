@@ -24,20 +24,20 @@
               veniam, quis nostrud exercitation
             </p>
             <div class="button_section">
-              <a class="main_bt" href="#">Read More</a>
+              <a class="main_bt" href="/">Read More</a>
             </div>
             <ul class="locat_icon">
               <li>
-                <a href="#"><img src="icon/facebook.png" /></a>
+                <a href="https://www.facebook.com/"><img src="icon/facebook.png" /></a>
               </li>
               <li>
-                <a href="#"><img src="icon/Twitter.png" /></a>
+                <a href="https://www.x.com/"><img src="icon/Twitter.png" /></a>
               </li>
               <li>
-                <a href="#"><img src="icon/linkedin.png" /></a>
+                <a href="https://www.linkedin.com/"><img src="icon/linkedin.png" /></a>
               </li>
               <li>
-                <a href="#"><img src="icon/instagram.png" /></a>
+                <a href="https://www.instagram.com/"><img src="icon/instagram.png" /></a>
               </li>
             </ul>
           </div>
@@ -58,20 +58,20 @@
               veniam, quis nostrud exercitation
             </p>
             <div class="button_section">
-              <a class="main_bt" href="#">Read More</a>
+              <a class="main_bt" href="{% url "home" %}">Read More</a>
             </div>
             <ul class="locat_icon">
               <li>
-                <a href="#"><img src="icon/facebook.png" /></a>
+                <a href="https://www.facebook.com/"><img src="icon/facebook.png" /></a>
               </li>
               <li>
-                <a href="#"><img src="icon/Twitter.png" /></a>
+                <a href="https://www.x.com/"><img src="icon/Twitter.png" /></a>
               </li>
               <li>
-                <a href="#"><img src="icon/linkedin.png" /></a>
+                <a href="https://www.linkedin.com/"><img src="icon/linkedin.png" /></a>
               </li>
               <li>
-                <a href="#"><img src="icon/instagram.png" /></a>
+                <a href="https://www.instagram.com/turdali.hasanboyev.07/"><img src="icon/instagram.png" /></a>
               </li>
             </ul>
           </div>
@@ -92,20 +92,20 @@
               veniam, quis nostrud exercitation
             </p>
             <div class="button_section">
-              <a class="main_bt" href="#">Read More</a>
+              <a class="main_bt" href="/">Read More</a>
             </div>
             <ul class="locat_icon">
               <li>
-                <a href="#"><img src="{% static "" %}icon/facebook.png" /></a>
+                <a href="https://www.facebook.com/"><img src="{% static "" %}icon/facebook.png" /></a>
               </li>
               <li>
-                <a href="#"><img src="{% static "" %}icon/Twitter.png" /></a>
+                <a href="https://www.x.com/"><img src="{% static "" %}icon/Twitter.png" /></a>
               </li>
               <li>
-                <a href="#"><img src="{% static "" %}icon/linkedin.png" /></a>
+                <a href="https://www.linkedin.com/"><img src="{% static "" %}icon/linkedin.png" /></a>
               </li>
               <li>
-                <a href="#"><img src="{% static '' %}icon/instagram.png" /></a>
+                <a href="https://www.instagram.com/"><img src="{% static '' %}icon/instagram.png" /></a>
               </li>
             </ul>
           </div>
@@ -160,7 +160,7 @@
             ea commodo consequat. Duis aute irure dolor in reprehenderit in
             voluptate velit esse cillum dolore
           </p>
-          <a href="#">Read More</a>
+          <a href="/">Read More</a>
         </div>
       </div>
       <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
@@ -202,7 +202,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="read-more">
-          <a href="#">Read More</a>
+          <a href="/">Read More</a>
         </div>
       </div>
     </div>
@@ -249,7 +249,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="read-more">
-            <a href="#">Read More</a>
+            <a href="/">Read More</a>
           </div>
         </div>
       </div>
@@ -267,23 +267,25 @@
     </div>
     <div class="row">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-        <form>
+        <form method="post">
+          {% csrf_token %}
           <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
-              <input class="form-control" placeholder="Name" type="Name" />
+              <input class="form-control" placeholder="Name" name="name" type="Name" />
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
               <input
                 class="form-control"
                 placeholder="Phone Number"
+                name="phone_number"
                 type="Phone Number"
               />
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
-              <input class="form-control" placeholder="Email" type="Email" />
+              <input class="form-control" placeholder="Email" name="email" type="Email" />
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
-              <textarea class="textarea" placeholder="Message">
+              <textarea class="textarea" name="message" placeholder="Message">
 Message</textarea
               >
             </div>

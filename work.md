@@ -9,4 +9,5 @@
 * Model yozish tugatildi
 # Model va admin yozish tugatildi
 # Template yozildi
-* Faqat backend qismi yozilib chiqiladi 
+* Faqat backend qismi yozilib chiqiladi
+# Template bilan ish yakunlandi endi api yozamiz
