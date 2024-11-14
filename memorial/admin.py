@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser, SubEmail, Contact, Genre, Category, Tag, Award
+from .models import CustomUser, SubEmail, Contact, Genre, Category, Tag, Award, Book, Review, MyBook, Banner, About
 
 
 admin.site.site_header = "Memorial Admin Paneli"
@@ -35,6 +35,7 @@ class CustomUserAdmin(UserAdmin):
         'is_active',
         'is_staff',
         'is_superuser',
+        'birthday',
     )
     search_fields = (
         'first_name',
@@ -167,5 +168,155 @@ class AwardAdmin(admin.ModelAdmin):
         'created_at',
         'updated_at',
     )
-    list_filter = ('is_active',)
+    list_filter = ('is_active', 'date',)
     search_fields = ('name',)
+    
+    
+@admin.register(Book)
+class BookAdmin(admin.ModelAdmin):
+    ordering = ('id',)
+    list_display = (
+        'id',
+        'title',
+        'sub_title',
+        'author',
+        'published_date',
+        'isbn',
+        'page_count',
+        'cover_image',
+        'cover_video',
+        'is_available',
+        'language',
+        'category',
+        'views',
+        'is_active',
+        'created_at',
+        'updated_at',
+    )
+    list_filter = ('is_active', 'is_available', 'language', 'category', 'author', 'published_date',)
+    readonly_fields = (
+        'id',
+        'created_at',
+        'updated_at',
+    )
+    search_fields = (
+        'title',
+        'sub_title',
+        'author__first_name',
+        'author__last_name',
+        'isbn',
+        'language',
+        'category__name',
+    )
+    prepopulated_fields = {
+        'slug': ('title',),
+    }
+    
+    
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    ordering = ('-id',)
+    list_display = (
+        'id',
+        'author',
+        'book',
+        'rate',
+        'review',
+        'bookshelve',
+        'date_started',
+        'date_ended',
+        'is_active',
+        'created_at',
+        'updated_at',
+        )
+    search_fields = (
+        'author__first_name',
+        'author__last_name',
+        'book__title',
+        'rate',
+        'bookshelve',
+    )
+    readonly_fields = (
+        'id',
+        'created_at',
+        'updated_at',
+    )
+    list_filter = (
+        'is_active',
+        'author',
+        'book',
+        'rate',
+        'bookshelve',
+        'date_started',
+        'date_ended',
+    )
+    
+    
+@admin.register(MyBook)
+class MyBookAdmin(admin.ModelAdmin):
+    ordering = ('id',)
+    list_display = (
+        'id',
+        'user',
+        'book',
+        'date_read',
+        'is_active',
+        'created_at',
+        'updated_at',
+    )
+    readonly_fields = (
+        'id',
+        'created_at',
+        'updated_at',
+    )
+    list_filter = (
+        'user',
+        'book',
+        'date_read',
+        'is_active',
+    )
+    search_fields = (
+        'user__first_name',
+        'user__last_name',
+        'book__title',
+    )
+    
+    
+@admin.register(About)
+class AboutAdmin(admin.ModelAdmin):
+    ordering = ('id',)
+    list_display = (
+        'id',
+        'title',
+        'image',
+        'is_active',
+        'created_at',
+        'updated_at',
+        )
+    readonly_fields = (
+        'id',
+        'created_at',
+        'updated_at',
+    )
+    search_fields = ('title',)
+    list_filter = ('is_active',)
+    
+    
+@admin.register(Banner)
+class BannerAdmin(admin.ModelAdmin):
+    ordering = ('-id',)
+    list_display = (
+        'id',
+        'title',
+        'image',
+        'is_active',
+        'created_at',
+        'updated_at',
+        )
+    readonly_fields = (
+        'id',
+        'created_at',
+        'updated_at',
+    )
+    search_fields = ('title',)
+    list_filter = ('is_active',)

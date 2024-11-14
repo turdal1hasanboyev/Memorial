@@ -7,3 +7,4 @@
 * Admin Register
 * PSQL Integration True
 * Model yozish tugatildi
+# Model va admin yozish tugatildi
