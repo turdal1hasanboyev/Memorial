@@ -33,9 +33,12 @@
     </div>
     {% endif %}
 
-    <p><strong>Tags:</strong> {% for tag in book.tags.all %}{{ tag.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-    <p><strong>Awards:</strong> {% for award in book.awards.all %}{{ award.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-    <p><strong>Genres:</strong> {% for genre in book.genres.all %}{{ genre.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <p><strong>Tags:</strong> {% for tag in book.tags.all %}{{ tag.name }}{% if not forloop.last %}, {% endif %}{%
+        endfor %}</p>
+    <p><strong>Awards:</strong> {% for award in book.awards.all %}{{ award.name }}{% if not forloop.last %}, {% endif
+        %}{% endfor %}</p>
+    <p><strong>Genres:</strong> {% for genre in book.genres.all %}{{ genre.name }}{% if not forloop.last %}, {% endif
+        %}{% endfor %}</p>
 
     <div class="mt-3">
         <p><strong>Added At:</strong> {{ book.created_at|date:"Y-m-d H:i" }}</p>
@@ -45,20 +48,20 @@
     </div>
 
     <hr class="my-4">
-    
+
     <h3>Reviews</h3>
     {% if reviews %}
-        {% for review in reviews %}
-        <div class="review mt-3">
-            <p><strong>Rating:</strong> {{ review.rate }}</p>
-            <p><strong>Review:</strong> {{ review.review }}</p>
-            <p><strong>Date Started:</strong> {{ review.date_started }}</p>
-            <p><strong>Date Ended:</strong> {{ review.date_ended }}</p>
-        </div>
-        <hr>
-        {% endfor %}
+    {% for review in reviews %}
+    <div class="review mt-3">
+        <p><strong>Rating:</strong> {{ review.rate }}</p>
+        <p><strong>Review:</strong> {{ review.review }}</p>
+        <p><strong>Date Started:</strong> {{ review.date_started }}</p>
+        <p><strong>Date Ended:</strong> {{ review.date_ended }}</p>
+    </div>
+    <hr>
+    {% endfor %}
     {% else %}
-        <p>No reviews yet. Be the first to review this book!</p>
+    <p>No reviews yet. Be the first to review this book!</p>
     {% endif %}
 
     {% if request.user.is_authenticated %}
