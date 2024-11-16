@@ -5,6 +5,8 @@ from .api.Genre.GenreLC.views import GenreLCAPIView
 from .api.Genre.GenreRUD.views import GenreRUDAPIView
 from .api.CustomUser.CustomUserLC.views import CustomUserLCAPIView
 from .api.CustomUser.CustomUserRUD.views import CustomUserRUDAPIView
+from .api.Contact.ContactLC.views import ContactLCAPIView
+from .api.Contact.ContactRUD.views import ContactRUDAPIView
 
 
 urlpatterns = [
@@ -14,4 +16,6 @@ urlpatterns = [
     path('genre_rud/<int:pk>/', GenreRUDAPIView.as_view(), name='genre-rud'),
     path('custom_user_lc/', CustomUserLCAPIView.as_view(), name='custom-user-lc'),
     path('custom_user_rud/<int:pk>/', CustomUserRUDAPIView.as_view(), name='custom-user-rud'),
+    path('contact_lc/', ContactLCAPIView.as_view(), name='contact-lc'),
+    path('contact_rud/<int:pk>/', ContactRUDAPIView.as_view(), name='contact-rud'),
 ]
