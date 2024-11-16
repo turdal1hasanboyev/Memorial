@@ -11,3 +11,5 @@
 # Template yozildi
 * Faqat backend qismi yozilib chiqiladi
 # Template bilan ish yakunlandi endi api yozamiz
+* Apilar yozildi
+Genre, Sub_Email, CustomUser tugatildi permissionslar berib chiqamiz
