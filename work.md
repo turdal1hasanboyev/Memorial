@@ -14,3 +14,5 @@
 * Apilar yozildi
 Genre, Sub_Email, CustomUser tugatildi permissionslar berib chiqamiz
 filter va test yozishga harakat qilamiz
+Tag va Categories uchun api chiqarildi 
+# Ertaga qiladigan ishim qolgan modellarga api yozib chiqish
