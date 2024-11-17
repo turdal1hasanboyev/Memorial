@@ -22,6 +22,11 @@ from .api.Book.BookDestroy.views import BookDestroyAPIView
 from .api.Book.BookList.views import BookListAPIView
 from .api.Book.BookRetrieve.views import BookRetrieveAPIView
 from .api.Book.BookUpdate.views import BookUpdateAPIView
+from .api.MyBook.MyBookCreate.views import MyBookCreateAPIView
+from .api.MyBook.MyBookDestroy.views import MyBookDestroyAPIView
+from .api.MyBook.MyBookUpdate.views import MyBookUpdateAPIView
+from .api.MyBook.MyBookList.views import MyBookListAPIView
+from .api.MyBook.MyBookRetrieve.views import MyBookRetrieveAPIView
 
 
 urlpatterns = [
@@ -48,4 +53,9 @@ urlpatterns = [
     path('book_list/', BookListAPIView.as_view(), name='book-list'),
     path('book_retrieve/<slug:slug>/', BookRetrieveAPIView.as_view(), name='book-retrieve'),
     path('book_update/<slug:slug>/', BookUpdateAPIView.as_view(), name='book-update'),
+    path('my_book_create/', MyBookCreateAPIView.as_view(), name='my-book-create'),
+    path('my_book_destroy/<int:pk>/', MyBookDestroyAPIView.as_view(), name='my-book-destroy'),
+    path('my_book_update/<int:pk>/', MyBookUpdateAPIView.as_view(), name='my-book-update'),
+    path('my_book_list/', MyBookListAPIView.as_view(), name='my-book-list'),
+    path('my_book_retrieve/<int:pk>/', MyBookRetrieveAPIView.as_view(), name='my-book-retrieve'),
 ]
