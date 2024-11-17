@@ -27,6 +27,11 @@ from .api.MyBook.MyBookDestroy.views import MyBookDestroyAPIView
 from .api.MyBook.MyBookUpdate.views import MyBookUpdateAPIView
 from .api.MyBook.MyBookList.views import MyBookListAPIView
 from .api.MyBook.MyBookRetrieve.views import MyBookRetrieveAPIView
+from .api.Review.ReviewCreate.views import ReviewCreateAPIView
+from .api.Review.ReviewDestroy.views import ReviewDestroyAPIView
+from .api.Review.ReviewList.views import ReviewListAPIView
+from .api.Review.ReviewUpdate.views import ReviewUpdateAPIView
+from .api.Review.ReviewRetrieve.views import ReviewRetrieveAPIView
 
 
 urlpatterns = [
@@ -58,4 +63,9 @@ urlpatterns = [
     path('my_book_update/<int:pk>/', MyBookUpdateAPIView.as_view(), name='my-book-update'),
     path('my_book_list/', MyBookListAPIView.as_view(), name='my-book-list'),
     path('my_book_retrieve/<int:pk>/', MyBookRetrieveAPIView.as_view(), name='my-book-retrieve'),
+    path('review_create/', ReviewCreateAPIView.as_view(), name='review-create'),
+    path('review_destroy/<int:pk>/', ReviewDestroyAPIView.as_view(), name='review-destroy'),
+    path('review_list/', ReviewListAPIView.as_view(), name='review-list'),
+    path('review_update/<int:pk>/', ReviewUpdateAPIView.as_view(), name='review-update'),
+    path('review_retrieve/<int:pk>/', ReviewRetrieveAPIView.as_view(), name='review-retrieve'),
 ]

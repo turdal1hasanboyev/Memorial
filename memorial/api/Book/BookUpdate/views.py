@@ -16,5 +16,5 @@ class BookUpdateAPIView(UpdateAPIView):
     def get_queryset(self):
         return Book.objects.filter(is_active=True).select_related('author', 'category').prefetch_related('tags', 'awards', 'genres')
     
-    def perform_create(self, serializer):
+    def perform_update(self, serializer):
         serializer.save(author_id=self.request.user.id)

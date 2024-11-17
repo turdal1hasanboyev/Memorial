@@ -13,5 +13,5 @@ class MyBookUpdateAPIView(UpdateAPIView):
     def get_queryset(self):
         return MyBook.objects.filter(is_active=True).select_related('user', 'book')
     
-    def perform_create(self, serializer):
+    def perform_update(self, serializer):
         serializer.save(user_id=self.request.user.id)

@@ -19,3 +19,10 @@ Tag va Categories uchun api chiqarildi
 * selected related va prefetch releted ishlatish Foreign va Many Two Many boglanishda
 * Api testing va Filter qilib korish
 # About, Banner and Award models writing api'S
+# Loyiha tugatildi
+```python
+def perform_create():
+    # Create
+def perform_update(): 
+    # Update
+```
