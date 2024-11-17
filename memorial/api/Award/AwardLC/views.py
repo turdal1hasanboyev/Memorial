@@ -1,7 +1,7 @@
 from rest_framework.generics import ListCreateAPIView
 from memorial.models import Award
 from .serializers import AwardLCSerializer
-from rest_framework.permissions import IsAdminUser, IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
 
 
 class AwardLCAPIView(ListCreateAPIView):
@@ -9,7 +9,6 @@ class AwardLCAPIView(ListCreateAPIView):
     serializer_class = AwardLCSerializer
     pagination_class = None
     permission_classes = [
-        IsAuthenticated,
         IsAuthenticatedOrReadOnly,
         IsAdminUser,
     ]

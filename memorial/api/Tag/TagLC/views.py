@@ -1,7 +1,7 @@
 from rest_framework.generics import ListCreateAPIView
 from .serializers import TagLCSerializer
 from memorial.models import Tag
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
 
 
 class TagLCAPIView(ListCreateAPIView):
@@ -9,7 +9,6 @@ class TagLCAPIView(ListCreateAPIView):
     serializer_class = TagLCSerializer
     permission_classes = [
         IsAuthenticatedOrReadOnly,
-        IsAuthenticated,
         IsAdminUser,
         ]
 

@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 from memorial.models import Category
 from .serializers import CategoryRUDSerializer
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
 
 
 class CategoryRUDAPIView(RetrieveUpdateDestroyAPIView):
@@ -10,7 +10,6 @@ class CategoryRUDAPIView(RetrieveUpdateDestroyAPIView):
     lookup_field = 'slug'
     permission_classes = [
         IsAuthenticatedOrReadOnly,
-        IsAuthenticated,
         IsAdminUser,
     ]
 

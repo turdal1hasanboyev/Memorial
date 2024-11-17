@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 from memorial.models import Tag
 from .serializers import TagRUDSerializer
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
 
 
 class TagRUDAPIView(RetrieveUpdateDestroyAPIView):
@@ -10,7 +10,6 @@ class TagRUDAPIView(RetrieveUpdateDestroyAPIView):
     lookup_field = 'pk'
     permission_classes = [
         IsAuthenticatedOrReadOnly,
-        IsAuthenticated,
         IsAdminUser,
     ]
 

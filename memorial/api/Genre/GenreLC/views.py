@@ -1,7 +1,7 @@
 from rest_framework.generics import ListCreateAPIView
 from .serializers import GenreLCSerializer
 from memorial.models import Genre
-from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
 
 
 class GenreLCAPIView(ListCreateAPIView):
@@ -11,7 +11,6 @@ class GenreLCAPIView(ListCreateAPIView):
     permission_classes = [
         IsAuthenticatedOrReadOnly,
         IsAdminUser,
-        IsAuthenticated,
     ]
 
     def get_queryset(self):

@@ -1,14 +1,13 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 from memorial.models import Award
 from .serializers import AwardRUDSerializer
-from rest_framework.permissions import IsAdminUser, IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
 
 
 class AwardRUDAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Award.objects.all()
     serializer_class = AwardRUDSerializer
     permission_classes = [
-        IsAuthenticated,
         IsAuthenticatedOrReadOnly,
         IsAdminUser,
     ]

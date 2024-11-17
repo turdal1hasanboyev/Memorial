@@ -1,7 +1,7 @@
 from rest_framework.generics import ListCreateAPIView
 from memorial.models import CustomUser
 from .serializers import CustomUserLCSerializer
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated, IsAdminUser
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
 
 
 class CustomUserLCAPIView(ListCreateAPIView):
@@ -10,7 +10,6 @@ class CustomUserLCAPIView(ListCreateAPIView):
     permission_classes = [
         IsAuthenticatedOrReadOnly,
         IsAdminUser,
-        IsAuthenticated,
     ]
     
     def get_queryset(self):

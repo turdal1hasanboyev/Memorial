@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
 from memorial.models import Genre
 from.serializers import GenreRUDSerializer
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated, IsAdminUser
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
 
 
 class GenreRUDAPIView(RetrieveUpdateDestroyAPIView):
@@ -11,7 +11,6 @@ class GenreRUDAPIView(RetrieveUpdateDestroyAPIView):
     permission_classes = [
         IsAuthenticatedOrReadOnly,
         IsAdminUser,
-        IsAuthenticated,
     ]
 
     def get_queryset(self):
