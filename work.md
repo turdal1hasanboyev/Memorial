@@ -16,3 +16,6 @@ Genre, Sub_Email, CustomUser tugatildi permissionslar berib chiqamiz
 filter va test yozishga harakat qilamiz
 Tag va Categories uchun api chiqarildi 
 # Ertaga qiladigan ishim qolgan modellarga api yozib chiqish
+* selected related va prefetch releted ishlatish Foreign va Many Two Many boglanishda
+* Api testing va Filter qilib korish
+# About, Banner and Award models writing api'S

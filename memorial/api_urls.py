@@ -11,6 +11,12 @@ from .api.Category.CategoryLC.views import CategoryLCAPIView
 from .api.Category.CategoryRUD.views import CategoryRUDAPIView
 from.api.Tag.TagLC.views import TagLCAPIView
 from .api.Tag.TagRUD.views import TagRUDAPIView
+from .api.Award.AwardLC.views import AwardLCAPIView
+from .api.Award.AwardRUD.views import AwardRUDAPIView
+from .api.About.AboutLC.views import AboutLCAPIView
+from .api.About.AboutRUD.views import AboutRUDAPIView
+from .api.Banner.BannerLC.views import BannerLCAPIView
+from .api.Banner.BannerRUD.views import BannerRUDAPIView
 
 
 urlpatterns = [
@@ -26,4 +32,10 @@ urlpatterns = [
     path('category_rud/<slug:slug>/', CategoryRUDAPIView.as_view(), name='category-rud'),
     path('tag_lc/', TagLCAPIView.as_view(), name='tag-lc'),
     path('tag_rud/<int:pk>/', TagRUDAPIView.as_view(), name='tag-rud'),
+    path('award_lc/', AwardLCAPIView.as_view(), name='award-lc'),
+    path('award_rud/<int:pk>/', AwardRUDAPIView.as_view(), name='award-rud'),
+    path('about_lc/', AboutLCAPIView.as_view(), name='about_lc'),
+    path('about_rud/<int:pk>/', AboutRUDAPIView.as_view(), name='about_rud'),
+    path('banner_lc/', BannerLCAPIView.as_view(), name='banner_lc'),
+    path('banner_rud/<int:pk>/', BannerRUDAPIView.as_view(), name='banner_rud'),
 ]
