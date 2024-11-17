@@ -17,6 +17,11 @@ from .api.About.AboutLC.views import AboutLCAPIView
 from .api.About.AboutRUD.views import AboutRUDAPIView
 from .api.Banner.BannerLC.views import BannerLCAPIView
 from .api.Banner.BannerRUD.views import BannerRUDAPIView
+from .api.Book.BookCreate.views import BookCreateAPIView
+from .api.Book.BookDestroy.views import BookDestroyAPIView
+from .api.Book.BookList.views import BookListAPIView
+from .api.Book.BookRetrieve.views import BookRetrieveAPIView
+from .api.Book.BookUpdate.views import BookUpdateAPIView
 
 
 urlpatterns = [
@@ -38,4 +43,9 @@ urlpatterns = [
     path('about_rud/<int:pk>/', AboutRUDAPIView.as_view(), name='about_rud'),
     path('banner_lc/', BannerLCAPIView.as_view(), name='banner_lc'),
     path('banner_rud/<int:pk>/', BannerRUDAPIView.as_view(), name='banner_rud'),
+    path('book_create/', BookCreateAPIView.as_view(), name='book-create'),
+    path('book_destroy/<slug:slug>/', BookDestroyAPIView.as_view(), name='book-destroy'),
+    path('book_list/', BookListAPIView.as_view(), name='book-list'),
+    path('book_retrieve/<slug:slug>/', BookRetrieveAPIView.as_view(), name='book-retrieve'),
+    path('book_update/<slug:slug>/', BookUpdateAPIView.as_view(), name='book-update'),
 ]
